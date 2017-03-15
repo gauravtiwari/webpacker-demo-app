@@ -5,6 +5,7 @@ gem 'rails', '~> 5.0.0'
 gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
+gem 'uglifier'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'webpacker', github: 'gauravtiwari/webpacker', branch: 'feature/static-assets'
