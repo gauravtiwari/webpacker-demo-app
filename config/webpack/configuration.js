@@ -5,10 +5,10 @@ const process = require('process')
 const yaml = require('js-yaml')
 const fs = require('fs')
 
-const env = process.env.NODE_ENV
+const env = process.env
 const { paths } = yaml.safeLoad(fs.readFileSync(path.resolve('config', 'webpack', 'paths.yml'), 'utf8'))
 const { dev_server } = yaml.safeLoad(fs.readFileSync(path.resolve('config', 'webpack', 'dev_server.yml'), 'utf8'))
-const publicPath = env !== 'production' && dev_server.enabled ?
+const publicPath = env.NODE_ENV !== 'production' && dev_server.enabled ?
               `http://${dev_server.host}:${dev_server.port}/` : `/${paths.dist_dir}/`
 
 module.exports = {

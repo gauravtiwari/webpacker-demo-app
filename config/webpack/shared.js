@@ -63,7 +63,7 @@ module.exports = {
           loader: 'file-loader',
           options: {
             publicPath,
-            name: env === 'production' ? '[name]-[hash].[ext]' : '[name].[ext]'
+            name: env.NODE_ENV === 'production' ? '[name]-[hash].[ext]' : '[name].[ext]'
           }
         }]
       }
@@ -73,7 +73,7 @@ module.exports = {
   plugins: [
     new webpack.EnvironmentPlugin(JSON.parse(JSON.stringify(env))),
     new ExtractTextPlugin(
-      env === 'production' ? '[name]-[hash].css' : '[name].css'
+      env.NODE_ENV === 'production' ? '[name]-[hash].css' : '[name].css'
     ),
     new ManifestPlugin({
       fileName: 'manifest.json',
