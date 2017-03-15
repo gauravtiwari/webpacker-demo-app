@@ -1,4 +1,4 @@
-// Common configuration for webpacker loaded from config/webpacker.yml
+// Common configuration for webpacker loaded from config/webpack/paths.yml
 
 const path = require('path')
 const process = require('process')
@@ -6,8 +6,8 @@ const yaml = require('js-yaml')
 const fs = require('fs')
 
 const env = process.env.NODE_ENV
-const configuration = fs.readFileSync(path.resolve('config', 'webpacker.yml'), 'utf8')
-const { paths, dev_server } = yaml.safeLoad(configuration)[env]
+const { paths } = yaml.safeLoad(fs.readFileSync(path.resolve('config', 'webpack', 'paths.yml'), 'utf8'))
+const { dev_server } = yaml.safeLoad(fs.readFileSync(path.resolve('config', 'webpack', 'dev_server.yml'), 'utf8'))
 const publicPath = env !== 'production' && dev_server.enabled ?
               `http://${dev_server.host}:${dev_server.port}/` : `/${paths.dist_dir}/`
 

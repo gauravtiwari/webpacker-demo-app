@@ -8,7 +8,7 @@
     "axios": "^0.15.3",
     "babel-core": "^6.24.0",
     "babel-loader": "^6.4.0",
-    "babel-preset-env": "^1.2.1",
+    "babel-preset-env": "^1.2.2",
     "babel-preset-react": "^6.23.0",
     "coffee-loader": "^0.7.3",
     "coffee-script": "^1.12.4",

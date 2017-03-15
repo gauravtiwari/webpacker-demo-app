@@ -6,9 +6,9 @@ const glob = require('glob')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
 const extname = require('path-complete-extname')
-const { dev_server, env, paths, publicPath } = require('./configuration.js')
+const { env, paths, publicPath } = require('./configuration.js')
 
-const config = {
+module.exports = {
   entry: glob.sync(path.join(paths.src_path, paths.dist_dir, '*.js*')).reduce(
     (map, entry) => {
       const basename = path.basename(entry, extname(entry))
@@ -22,13 +22,13 @@ const config = {
 
   module: {
     rules: [
+      { test: /.ts$/, loader: 'ts-loader' },
       {
         test: /.vue$/, loader: 'vue-loader',
         options: {
           loaders: { 'scss': 'vue-style-loader!css-loader!sass-loader', 'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'}
         }
       },
-      { test: /.ts$/, loader: 'ts-loader' },
       { test: /\.coffee(\.erb)?$/, loader: 'coffee-loader' },
       {
         test: /\.(js|jsx)?(\.erb)?$/,
@@ -93,12 +93,4 @@ const config = {
   resolveLoader: {
     modules: [path.resolve(paths.node_modules_path)]
   }
-}
-
-module.exports = {
-  config,
-  dev_server,
-  env,
-  paths,
-  publicPath
 }
