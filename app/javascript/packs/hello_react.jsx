@@ -4,9 +4,10 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
+import './hello_react.sass'
 
 const Hello = props => (
-  <div>Hello {props.name}!</div>
+  <div className="hello-react">Hello {props.name}!</div>
 )
 
 Hello.defaultProps = {
