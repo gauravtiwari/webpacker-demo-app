@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "postinstall": "npm rebuild node-sass"
+  },
   "dependencies": {
     "@angular/common": "^2.4.9",
     "@angular/compiler": "^2.4.9",
@@ -35,7 +38,8 @@
     "webpack": "^2.2.1",
     "webpack-manifest-plugin": "^1.1.0",
     "webpack-merge": "^4.0.0",
-    "zone.js": "^0.8.3"
+    "write-file-webpack-plugin": "^4.0.0",
+    "zone.js": "^0.8.4"
   },
   "devDependencies": {
     "webpack-dev-server": "^2.4.2"
