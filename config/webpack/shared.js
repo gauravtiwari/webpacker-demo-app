@@ -5,11 +5,16 @@ const path = require('path')
 const glob = require('glob')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
+const WriteFilePlugin = require('write-file-webpack-plugin')
 const extname = require('path-complete-extname')
 const { env, paths, publicPath } = require('./configuration.js')
 
+const extensions = ['.js', '.coffee', '.jsx', '.ts']
+const extensionGlob = `*(${extensions.join('|')})*`
+const packPaths = glob.sync(path.join(paths.src_path, paths.dist_dir, extensionGlob))
+
 module.exports = {
-  entry: glob.sync(path.join(paths.src_path, paths.dist_dir, '*.js*')).reduce(
+  entry: packPaths.reduce(
     (map, entry) => {
       const basename = path.basename(entry, extname(entry))
       const localMap = map
@@ -72,18 +77,14 @@ module.exports = {
 
   plugins: [
     new webpack.EnvironmentPlugin(JSON.parse(JSON.stringify(env))),
-    new ExtractTextPlugin(
-      env.NODE_ENV === 'production' ? '[name]-[hash].css' : '[name].css'
-    ),
-    new ManifestPlugin({
-      fileName: 'manifest.json',
-      publicPath: `/${paths.dist_dir}/`
-    })
+    new ExtractTextPlugin(env.NODE_ENV === 'production' ? '[name]-[hash].css' : '[name].css'),
+    new ManifestPlugin({ fileName: 'manifest.json', publicPath }),
+    new WriteFilePlugin({ test: /manifest.json$/, log: false })
   ],
 
   resolve: {
     alias: { 'vue$':'vue/dist/vue.esm.js' },
-    extensions: ['.js', '.coffee', '.ts'],
+    extensions,
     modules: [
       path.resolve(paths.src_path),
       path.resolve(paths.node_modules_path)

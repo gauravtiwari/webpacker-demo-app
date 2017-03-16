@@ -1,7 +1,4 @@
 {
-  "scripts": {
-    "postinstall": "npm rebuild node-sass"
-  },
   "dependencies": {
     "@angular/common": "^2.4.9",
     "@angular/compiler": "^2.4.9",
@@ -10,7 +7,7 @@
     "@angular/platform-browser-dynamic": "^2.4.9",
     "axios": "^0.15.3",
     "babel-core": "^6.24.0",
-    "babel-loader": "^6.4.0",
+    "babel-loader": "^6.4.1",
     "babel-preset-env": "^1.2.2",
     "babel-preset-react": "^6.23.0",
     "coffee-loader": "^0.7.3",
@@ -37,7 +34,7 @@
     "vue-template-compiler": "^2.2.4",
     "webpack": "^2.2.1",
     "webpack-manifest-plugin": "^1.1.0",
-    "webpack-merge": "^4.0.0",
+    "webpack-merge": "^4.1.0",
     "write-file-webpack-plugin": "^4.0.0",
     "zone.js": "^0.8.4"
   },
