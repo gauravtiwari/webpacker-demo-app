@@ -22,13 +22,13 @@ module.exports = {
 
   module: {
     rules: [
-      { test: /.ts$/, loader: 'ts-loader' },
       {
         test: /.vue$/, loader: 'vue-loader',
         options: {
           loaders: { 'scss': 'vue-style-loader!css-loader!sass-loader', 'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'}
         }
       },
+      { test: /.ts$/, loader: 'ts-loader' },
       { test: /\.coffee(\.erb)?$/, loader: 'coffee-loader' },
       {
         test: /\.(js|jsx)?(\.erb)?$/,
@@ -91,6 +91,6 @@ module.exports = {
   },
 
   resolveLoader: {
-    modules: [path.resolve(paths.node_modules_path)]
+    modules: [paths.node_modules_path]
   }
 }

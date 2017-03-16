@@ -18,7 +18,6 @@ begin
 
   NODE_MODULES_PATH   = File.join(APP_PATH.shellescape, config["paths"]["node_modules_path"])
   WEBPACK_CONFIG_PATH = File.join(APP_PATH.shellescape, config["paths"]["config_path"])
-  PACKS_PATH          = File.join(APP_PATH.shellescape, config["paths"]["dist_path"])
 
   WEBPACK_BIN       = "#{NODE_MODULES_PATH}/.bin/webpack-dev-server"
   DEV_SERVER_CONFIG = "#{WEBPACK_CONFIG_PATH}/development.server.js"
@@ -30,5 +29,5 @@ end
 
 Dir.chdir(APP_PATH) do
   exec "NODE_PATH=#{NODE_MODULES_PATH} #{WEBPACK_BIN} --progress --color " \
-    "--config #{DEV_SERVER_CONFIG} --content-base #{PACKS_PATH} #{ARGV.join(" ")}"
+    "--config #{DEV_SERVER_CONFIG}"
 end

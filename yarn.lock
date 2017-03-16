@@ -2565,8 +2565,8 @@ node-fetch@^1.0.1:
     is-stream "^1.0.1"
 
 node-gyp@^3.3.1:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/node-gyp/-/node-gyp-3.5.0.tgz#a8fe5e611d079ec16348a3eb960e78e11c85274a"
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/node-gyp/-/node-gyp-3.6.0.tgz#7474f63a3a0501161dda0b6341f022f14c423fa6"
   dependencies:
     fstream "^1.0.0"
     glob "^7.0.3"
@@ -2578,7 +2578,7 @@ node-gyp@^3.3.1:
     osenv "0"
     request "2"
     rimraf "2"
-    semver "2.x || 3.x || 4 || 5"
+    semver "~5.3.0"
     tar "^2.0.0"
     which "1"
 
@@ -3504,7 +3504,7 @@ select-hose@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/select-hose/-/select-hose-2.0.0.tgz#625d8658f865af43ec962bfc376a37359a4994ca"
 
-"semver@2 || 3 || 4 || 5", "semver@2.x || 3.x || 4 || 5", semver@^5.0.1, semver@~5.3.0:
+"semver@2 || 3 || 4 || 5", semver@^5.0.1, semver@~5.3.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.3.0.tgz#9b2ce5d3de02d17c6012ad326aa6b4d0cf54f94f"
 
@@ -3760,9 +3760,9 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-style-loader@^0.14.0:
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.14.0.tgz#e44fe69ef891513bb22fdd10c3167aaa99711164"
+style-loader@^0.14.1:
+  version "0.14.1"
+  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.14.1.tgz#27b9b6c9822adf8c4748e02a1efae229405d79a5"
   dependencies:
     loader-utils "^1.0.2"
 
@@ -4248,6 +4248,6 @@ yargs@~3.10.0:
     decamelize "^1.0.0"
     window-size "0.1.0"
 
-zone.js@^0.8.2:
-  version "0.8.2"
-  resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.8.2.tgz#85d2c9d4c2cdb36eaeab4b50be68e06bf72be86c"
+zone.js@^0.8.3:
+  version "0.8.3"
+  resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.8.3.tgz#917aa6e3ce4156d96db20e8137dcd515878314cc"

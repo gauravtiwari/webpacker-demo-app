@@ -22,7 +22,7 @@ begin
   WEBPACK_CONFIG_PATH = File.join(APP_PATH.shellescape, config["paths"]["config_path"])
 
   if NODE_ENV == "development" && dev_server_config["dev_server"]["enabled"]
-    puts "Warning: webpack-dev-server is currently enabled in #{CONFIG_PATH}. " \
+    puts "Warning: webpack-dev-server is currently enabled in #{DEV_SERVER_CONFIG_PATH}. " \
       "Disable to serve assets directly from packs directory"
   end
 rescue Errno::ENOENT, NoMethodError
